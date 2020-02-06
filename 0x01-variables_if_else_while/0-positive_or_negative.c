@@ -18,7 +18,7 @@ n = rand() - RAND_MAX / 2;
 }
 	else if (n == 0)
 {
-	printf("%dn is zero\n", n);
+	printf("%d is zero\n", n);
 }
 	else
 {
