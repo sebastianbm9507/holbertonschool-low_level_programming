@@ -9,12 +9,14 @@
 {
 		             
              char i;
+
                          for(i='a'; i<='z'; i++)
                          {
                             putchar(i);
-			 }
-							       
-       return (0);
+
+			 }	
+	putchar('\n');
+	return (0);
 						           
 						         
 }/* End of the program */
