@@ -1,8 +1,8 @@
 #include <stdio.h>
 /*
- * Main function
- * iDescription:A column of asterisks on the left sid
- * ith beginning and ending almost-blank lin
+ * main - function main
+ *
+ * Return: return 0
  */
 int main(void)
 {
