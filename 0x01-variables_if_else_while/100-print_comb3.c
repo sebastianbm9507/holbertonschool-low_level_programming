@@ -7,17 +7,22 @@
 int main(void)
 {
 		int l;
+		int r;
 
-		for (l = 1; l < 90; l++)
+		for (l = 0; l <= 9; l++)
 		{
-			putchar(l / 10 + '0');
-			putchar(l % 10 + '0');
-			if (l != 89)
+			for (r = l + 1; r <= 9; r++)
 			{
-			putchar(',');
-			putchar(' ');
+				putchar(l + '0');
+				putchar(r + '0');
+				if (!(l == 8 && r == 9))
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 		putchar('\n');
 		return (0);
 }
+
