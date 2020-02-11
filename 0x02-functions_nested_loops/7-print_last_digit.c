@@ -1,4 +1,4 @@
-#include"holberton.h"
+#include "holberton.h"
 /**
  * print_last_digit - print a sign depends of the value of c
  *
@@ -13,9 +13,7 @@ int print_last_digit(int z)
 	lastDigit = z % 10;
 
 	if (z < 0)
-	{
 		lastDigit *= -1;
-	}
 	_putchar(lastDigit + '0');
 	return (lastDigit);
 }
