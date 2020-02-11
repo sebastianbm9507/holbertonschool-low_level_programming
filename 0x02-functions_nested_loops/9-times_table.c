@@ -21,17 +21,28 @@ void times_table(void)
 				ld = result % 10;
 				_putchar(fd + '0');
 				_putchar(ld + '0');
+				if (j != 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
-			else
+			if (result < 10)
 			{
-				_putchar(' ');
 				_putchar(result + '0');
-			}
-			if (j != 9)
-			{
+				if ((i * (j + 1)) > 9 && j != 9)
+				{
 				_putchar(',');
 				_putchar(' ');
+				}
+				else if (j != 9 && result < 10)
+				{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				}
 			}
+
 		}
 		_putchar('\n');
 	}
