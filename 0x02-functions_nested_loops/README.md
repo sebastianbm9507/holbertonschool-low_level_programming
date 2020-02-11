@@ -72,4 +72,4 @@ What you should learn from this project:
 ---
 
 ## Author
-* **** - [sebastianbm9507](https://github.com/sebastianbm9507)
+* **Sebastian Bueno** - [sebastianbm9507](https://github.com/sebastianbm9507)
