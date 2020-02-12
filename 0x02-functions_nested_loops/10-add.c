@@ -2,11 +2,12 @@
 /**
  * add - adds two integer
  *
- * @int: stand for the parameter
+ * @a: stand for the parameter
+ * @b: stand for integer parameter
  *
  * Return: the value of the add
  */
 int add(int a, int b)
 {
-	return (a+b);
+	return (a + b);
 }
