@@ -11,7 +11,7 @@ void main(void)
 	int segundo = 2;
 	int resultado;
 	int i;
-    
+
 	printf("%d", inicio);
 	putchar(',');
 	putchar(' ');
