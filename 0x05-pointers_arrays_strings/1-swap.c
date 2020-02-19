@@ -5,9 +5,11 @@
  * @b: integer pointer parameter
  */
 void swap_int(int *a, int *b)
-{
-*a = 42;
-*b = 98;
+i{
+int temp;
+temp = *a;
+*a = *b;
+*b = temp;
 }
 
 
