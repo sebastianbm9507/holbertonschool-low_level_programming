@@ -1,7 +1,7 @@
 #include"holberton.h"
 /**
  * _strlen - swap a value
- *
+ * @s: pointer parameter
  * Return: Always 0 (Success)
  */
 int _strlen(char *s)
