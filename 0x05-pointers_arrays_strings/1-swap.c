@@ -5,7 +5,7 @@
  * @b: integer pointer parameter
  */
 void swap_int(int *a, int *b)
-i{
+{
 int temp;
 temp = *a;
 *a = *b;
