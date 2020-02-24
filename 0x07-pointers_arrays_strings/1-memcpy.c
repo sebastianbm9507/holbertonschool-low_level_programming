@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * _memcpy -  a function that copies memory area.
  * @dest: my destiny pointer.
@@ -19,4 +18,5 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	{
 	dest[i] = '\0';
 	}
+	return (dest);
 }
