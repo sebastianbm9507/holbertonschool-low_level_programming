@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * _strchr - locates a character in a string
  * @s: pointer to an array.
@@ -14,7 +13,7 @@ char *_strchr(char *s, char c)
 	{
 		if (s[i] == c)
 		{
-			return (&(s + i));
+			return (&(s[i]));
 		}
 	}
 	return (NULL);
