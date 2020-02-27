@@ -20,12 +20,11 @@ int findraiz(int x, int n)
 			return (findraiz(x + 1, n));
 		}
 	}
- /**
- * _sqrt_recursion - function that returns the natural square root of a number.
+/**
+ * _sqrt_recursion - function root of a number
  * @n: number to find the square root
  * Return: the number
  */
-
 int _sqrt_recursion(int n)
 {
 	int x = 0;
