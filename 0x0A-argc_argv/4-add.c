@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv)
 {
-	int  i, sum;
+	int  i, j, sum = 0;
 
 	if (argv[1] == '\0')
 	{
@@ -20,18 +20,22 @@ int main(int argc, char **argv)
 		for (i = 1; i < argc ; i++)
 		{
 			/* obtain ascii value of the character and verify if it's a number */
-			if (*argv[i] > 47 && *argv[i] < 58)
+			for (j = 0; argv[i][j] != 0 ; j++)
 			{
-				sum = sum + atoi(argv[i]);
-			}
-			/* it's different of a number */
-			else
-			{
+				if (argv[i][j] > 47 && argv[i][j] < 58)
+				{
+					continue;
+				}
+				/* it's different of a number */
+				else
+				{
 				printf("Error\n");
 				return (1);
+				}
 			}
-		}
-		printf("%d\n", sum);
+			sum += atoi(argv[i]);
+	}
+	printf("%d\n", sum);
 	}
 	return (0);
 }
