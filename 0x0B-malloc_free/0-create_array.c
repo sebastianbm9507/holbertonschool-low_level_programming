@@ -12,10 +12,14 @@ char *create_array(unsigned int size, char c)
 	unsigned int i;
 	/** create a pointer because malloc return a void pointer **/
 	char *ptr = 0;
-	/** asign to the pointer the malloc function */
-	ptr = malloc(sizeof(char) * size);
 	/** check if the size is 0 **/
 	if (size == 0)
+	{
+		return (NULL);
+	}
+	/** asign to the pointer the malloc function */
+	ptr = malloc(sizeof(char) * size);
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
