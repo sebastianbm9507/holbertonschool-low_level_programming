@@ -14,12 +14,19 @@ char *str_concat(char *s1, char *s2)
 	/** variable to refer 0 position in s2 */
 	int j;
 	char *concaString;
+
 	/** check if the strings are empty*/
-	if (s1 == NULL && s2 == NULL)
+	if (s1 == NULL)
 	{
-	return (NULL);
+		s1 = malloc(1);
+		*s1 = '\0';
 	}
-		/** get the s1 lenght */
+	if (s2 == NULL)
+	{
+		s2 = malloc(1);
+		*s2 = '\0';
+	}
+	/** get the s1 lenght */
 		a = 0;
 		while (s1[a] != '\0')
 			a++;
@@ -27,11 +34,13 @@ char *str_concat(char *s1, char *s2)
 		i = 0;
 		while (s2[i] != '\0')
 			i++;
+		
 	/** malloc to get the addres of my two string and handle with concatString*/
 	concaString = malloc(sizeof(char) * (a + i + 1));
 	/** check if malloc fail */
 	if (concaString == NULL)
 		return (NULL);
+	
 	/** insert s1 to my new array */
 	for (j = 0; s1[j] != '\0' ; j++)
 	{
