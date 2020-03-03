@@ -29,7 +29,6 @@ char *str_concat(char *s1, char *s2)
 	if (concaString == NULL)
 		return (NULL);
 	/** insert s1 to my new array */
-	printf("%c", s1[a]);
 	for (j = 0; s1[j] != '\0' ; j++)
 	{
 		concaString[j] = s1[j];
