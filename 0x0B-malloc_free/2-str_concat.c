@@ -19,16 +19,16 @@ char *str_concat(char *s1, char *s2)
 	{
 	return (NULL);
 	}
-	/** get the s1 lenght */
-	a = 0;
-	while (s1[a] != '\0')
-		a++;
-	/** get the s2 lenght */
-	i = 0;
-	while (s2[i] != '\0')
-		i++;
+		/** get the s1 lenght */
+		a = 0;
+		while (s1[a] != '\0')
+			a++;
+		/** get the s2 lenght */
+		i = 0;
+		while (s2[i] != '\0')
+			i++;
 	/** malloc to get the addres of my two string and handle with concatString*/
-	concaString = malloc(sizeof(char) * (a + i));
+	concaString = malloc(sizeof(char) * (a + i + 1));
 	/** check if malloc fail */
 	if (concaString == NULL)
 		return (NULL);
