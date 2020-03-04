@@ -16,7 +16,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 	/** create memory for my malloc type double pointer */
-	ptr2 =malloc(sizeof(int *) * height);
+	ptr2 = malloc(sizeof(int *) * height);
 	/** check if my ptr is on succes */
 	if (ptr2 == NULL)
 	{
@@ -25,10 +25,10 @@ int **alloc_grid(int width, int height)
 	/** opening spaces in the height for the width in each height*/
 	for (i = 0 ; i < height ; i++)
 	{
-		/** opening spaces for the width*/ 
+		/** opening spaces for the width*/
 		ptr2[i] = malloc(sizeof(int) * width);
 		if (ptr2[i] == NULL)
-		{	
+		{
 			for (; i >= 0 ; i--)
 			{
 				free(ptr2[i]);
