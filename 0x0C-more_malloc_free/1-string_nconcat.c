@@ -12,8 +12,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int size1, size2, i, j;
 	char *concat = NULL;
 	/**treating s2 as an empty string if is NULL */
-	if (s1 == NULL && s2 == NULL)
-	s1 = "", s2 = "";
 			if (s2 == NULL)
 				s2 = "";
 			if (s1 == NULL)
@@ -35,14 +33,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	concat = malloc(sizeof(int) * (size1 + size2 + 1));
 	/** check if my concat was on succes */
 	if (concat == NULL)
-	{
 		return (NULL);
-	}
 			/** concatenate s1 to my ptr */
 			for (i = 0; i < size1; i++)
 				concat[i] = s1[i];
 			/** concatenate s2 to my ptr */
-			for (j = 0; j < size2; i++, j++)
+			for (j = 0; j <= size2; i++, j++)
 				concat[i] = s2[j];
 			concat[i] = '\0';
 	return (concat);
