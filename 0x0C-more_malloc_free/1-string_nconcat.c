@@ -13,9 +13,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *concat = NULL;
 	/**treating s2 as an empty string if is NULL */
 			if (s2 == NULL)
-				s2 = "";
+			{
+				s2 = malloc(1),
+				*s2 = '\0';
+			}
 			if (s1 == NULL)
-				s1 = "";
+			{
+				s1 = malloc(1);
+				*s1 = '\0';
+			}
 	/** get the size for s1*/
 	size1 = 0;
 	while (s1[size1] != '\0')
