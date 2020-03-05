@@ -38,7 +38,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			for (i = 0; i < size1; i++)
 				concat[i] = s1[i];
 			/** concatenate s2 to my ptr */
-			for (j = 0; j <= size2; i++, j++)
+			for (j = 0; j < size2; i++, j++)
 				concat[i] = s2[j];
 			concat[i] = '\0';
 	return (concat);
