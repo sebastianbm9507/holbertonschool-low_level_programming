@@ -28,7 +28,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (size2 > n)
 			size2 = n;
 		/**reserve the memory fot my concat string */
-	concat = malloc(sizeof(int) * (size1 + size2 + 1));
+	concat = malloc(sizeof(char) * (size1 + size2 + 1));
 	/** check if my concat was on succes */
 	if (concat == NULL)
 		return (NULL);
