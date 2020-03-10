@@ -33,7 +33,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	sizeName = _strlen(name);
 	/** creating the space for copy */
 	name_copy = malloc(sizeof(char) * sizeName + 1);
-	name_copy[sizeName] = '\0';
 	if (name_copy == NULL)
 		return (NULL);
 	/** check if owner is null */
@@ -47,10 +46,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	sizeOwner = _strlen(owner);
 	/** creating the space for the  copy */
 	owner_copy = malloc(sizeof(char) * sizeOwner + 1);
-	owner_copy[sizeOwner] = '\0';
 	if (owner_copy == NULL)
 	{
 		free(name_copy);
+		free(bulldog);
 		return (NULL);
 	}
 		/** create the copy */
@@ -85,6 +84,7 @@ char *_strcpy(char *dest, char *src)
 		dest[j] = src[j];
 		j++;
 	}
+	dest[j] = '\0';
 	return (dest);
 }
 
