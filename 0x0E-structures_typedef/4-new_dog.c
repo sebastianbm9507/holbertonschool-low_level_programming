@@ -22,25 +22,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 		bulldog = malloc(sizeof(dog_t));
 		if (bulldog == NULL)
 			return (NULL);
-		/** check if name is null */
-		if (name == NULL)
-		{
-			free(owner);
-			free(bulldog);
-			return (NULL);
-		}
+
 	/** sizes of my pointer */
 	sizeName = _strlen(name);
 	/** creating the space for copy */
 	name_copy = malloc(sizeof(char) * sizeName + 1);
 	if (name_copy == NULL)
-		return (NULL);
-	/** check if owner is null */
-	if (owner == NULL)
 	{
-		free(name);
-		free(bulldog);
-		return (NULL);
+			free(bulldog);
+			return (NULL);
 	}
 	/** size of the owner */
 	sizeOwner = _strlen(owner);
@@ -84,7 +74,6 @@ char *_strcpy(char *dest, char *src)
 		dest[j] = src[j];
 		j++;
 	}
-	dest[j] = '\0';
 	return (dest);
 }
 
