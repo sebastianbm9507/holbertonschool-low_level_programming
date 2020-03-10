@@ -12,23 +12,23 @@ int _strlen(char *s);
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int sizeName, sizeOwner;
-	char *name_copy = NULL;
-	char *owner_copy = NULL;
-	/** my pointer to my new dog */
-	dog_t *bulldog;
+		int sizeName, sizeOwner;
+		char *name_copy = NULL;
+		char *owner_copy = NULL;
+		/** my pointer to my new dog */
+		dog_t *bulldog;
 
-	/** creating space for my new dog */
-	bulldog = malloc(sizeof(dog_t));
-	if (bulldog == NULL)
-		return (NULL);
-	/** check if name is null */
-	if (name == NULL)
-	{
-		free(owner);
-		free(bulldog);
-		return (NULL);
-	}
+		/** creating space for my new dog */
+		bulldog = malloc(sizeof(dog_t));
+		if (bulldog == NULL)
+			return (NULL);
+		/** check if name is null */
+		if (name == NULL)
+		{
+			free(owner);
+			free(bulldog);
+			return (NULL);
+		}
 	/** sizes of my pointer */
 	sizeName = _strlen(name);
 	/** creating the space for copy */
@@ -47,10 +47,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/** creating the space for the  copy */
 	owner_copy = malloc(sizeof(char) * sizeOwner + 1);
 	if (owner_copy == NULL)
+	{
 		free(name_copy);
-	/** create the copy */
-	_strcpy(name_copy, name);
-	_strcpy(owner_copy, owner);
+		return (NULL);
+	}
+		/** create the copy */
+		_strcpy(name_copy, name);
+		_strcpy(owner_copy, owner);
 	/** filling my new dog structure */
 	bulldog->name = name_copy;
 	bulldog->age = age;
