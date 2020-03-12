@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	if (((*operator == '/') || (*operator == '%')) && (param2 == 0))
 	{
 		printf("Error\n");
-		exit(99);
+		exit(100);
 	}
 	res = (*get_op_func(operator))(param1, param2);
 	printf("%d\n", res);
