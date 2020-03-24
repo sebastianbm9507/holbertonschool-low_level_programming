@@ -3,19 +3,19 @@
 /**
  * listint_len - return the lenght of a list
  * @h: list
- *
  * Return: number of elements in the list
  */
 size_t listint_len(const listint_t *h)
 {
 	size_t i;
+	listint_t *head;
 
-	if (!h)
-		return (NULL);
-	while (h)
+	head = (listint_t *)h;
+
+	while (head)
 	{
-		h = h->next;
 		i++;
+		head = head->next;
 	}
 	return (i);
 }
