@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * listint_len - return the lenght of a list
  * @h: list
@@ -12,7 +11,7 @@ size_t listint_len(const listint_t *h)
 
 	head = (listint_t *)h;
 
-	while (head)
+	while (head != NULL)
 	{
 		i++;
 		head = head->next;
