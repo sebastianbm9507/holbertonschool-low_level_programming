@@ -24,6 +24,8 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	if (!*head)
 	{
 		*head = newend;
+		newend->n = n;
+		newend->next = NULL;
 		return (newend);
 	}
 	/** finding the null moving end pointer*/
