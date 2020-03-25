@@ -20,7 +20,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	index2 = 0;
 	centinela = *head;
 	/**----------------*/
-	if (!*head)
+	if (!*head || head == NULL)
 		return (NULL);
 	/**-----get lenght of list------*/
 	tamanio = listint_len2((*head));
