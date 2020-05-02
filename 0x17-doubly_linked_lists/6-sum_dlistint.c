@@ -12,7 +12,7 @@ int sum_dlistint(dlistint_t *head)
 	/** Pointer to not move head 🗡*/
 	dlistint_t *guide = head;
 	/** means = no list ❌*/
-	if (!head)
+	if (!guide)
 		result = 0;
 	/** exist a list ✅*/
 	else
