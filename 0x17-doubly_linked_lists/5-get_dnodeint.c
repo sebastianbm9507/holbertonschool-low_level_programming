@@ -22,6 +22,6 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 		head = head->next;
 		counter++;
 	}
-	/** if reaches here means is empty 🔋*/
+	/** if reaches here means node at index does not exist 🔋*/
 	return (NULL);
 }
