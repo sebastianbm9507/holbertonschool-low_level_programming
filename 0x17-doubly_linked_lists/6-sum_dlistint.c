@@ -9,19 +9,17 @@ int sum_dlistint(dlistint_t *head)
 {
 	/** Variable to store the sum result 💈*/
 	int result;
-	/** Pointer to not move head 🗡*/
-	dlistint_t *guide = head;
 	/** means = no list ❌*/
-	if (!guide)
+	if (!head)
 		result = 0;
 	/** exist a list ✅*/
 	else
 	{
 		/** move into the list to sum Ⓜ️ */
-		while (guide)
+		while (head)
 		{
-			result = result + guide->n;
-			guide = guide->next;
+			result = result + head->n;
+			head = head->next;
 		}
 	}
 	/** Return the result of sum 🔰*/
