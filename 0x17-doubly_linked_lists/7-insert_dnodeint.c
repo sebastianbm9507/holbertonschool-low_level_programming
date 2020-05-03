@@ -15,6 +15,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_node;
 	/** pointer to not move head ✅*/
 	dlistint_t *guide_ptr;
+	/** auxiliar pointer 🚺*/
 	dlistint_t *current_node;
 	/** index to compare with idx 🅿️*/
 	unsigned int idx_2 = 0;
@@ -25,12 +26,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node = malloc(sizeof(dlistint_t));
 	if (idx > len || new_node == NULL || h == NULL)
 		return (NULL);
-
+	/** case to insert node at first position 0️⃣ */
 	if (idx == 0)
 	{
+		/** call the function add_nodeint2 🤙🏼 */
 		new_node = add_dnodeint2(h, n);
 		return (new_node);
 	}
+	/** case to insert node at end position of list ⛔️*/
 	if (idx == len)
 	{
 		new_node = add_dnodeint_end2(h, n);
@@ -43,11 +46,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		*h = new_node;
 		return (new_node);
 	}
-
+	/** iterate into list of nodes 🅰️*/
 	while (guide_ptr != NULL)
 	{
+		/** Found it ✅*/
 		if (idx_2 == (idx - 1))
 		{
+			/** makes all the assignment to new node elements ✅*/
 			current_node = guide_ptr;
 			guide_ptr =  guide_ptr->next;
 			new_node->next = guide_ptr;
@@ -57,9 +62,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			current_node->next = new_node;
 			return (new_node);
 		}
+		/** case not found it yet ❗️ */
 		guide_ptr = guide_ptr->next;
 		idx_2++;
 	}
+	/** case not found it ❗️*/
 	return (NULL);
 }
 /**
