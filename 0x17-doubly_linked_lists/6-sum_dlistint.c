@@ -8,20 +8,17 @@
 int sum_dlistint(dlistint_t *head)
 {
 	/** Variable to store the sum result 💈*/
-	int result;
+	int result = 0;
 	/** means = no list ❌*/
 	if (!head)
 		result = 0;
 	/** exist a list ✅*/
-	else
-	{
-		/** move into the list to sum Ⓜ️ */
+	/** move into the list to sum Ⓜ️ */
 		while (head)
 		{
 			result = result + head->n;
 			head = head->next;
 		}
-	}
 	/** Return the result of sum 🔰*/
 	return (result);
 }
