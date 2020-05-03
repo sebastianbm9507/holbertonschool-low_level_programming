@@ -1,5 +1,7 @@
 #include "lists.h"
-
+size_t dlistint_len(const dlistint_t *h);
+dlistint_t *add_dnodeint_end2(dlistint_t **head, const int n);
+dlistint_t *add_dnodeint2(dlistint_t **head, const int n);
 /**
  * insert_dnodeint_at_index - Insert node at given idx
  * @h: head to the first element of list
@@ -7,9 +9,6 @@
  * @n: (n) value to be assigned to new node
  * Return: Adress of new node On succes , NULL On failure
  */
-
-size_t dlistint_len(const dlistint_t *h);
-dlistint_t *add_dnodeint_end2(dlistint_t **head, const int n);
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	/** new node to be inserted 🔰*/
@@ -24,16 +23,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	/** create memory for new node 🆗*/
 	new_node = malloc(sizeof(dlistint_t));
-	if (!new_node)
+	if (idx > len || new_node == NULL || h == NULL)
 		return (NULL);
-	if (idx > len)
-		return (NULL);
+
 	if (idx == 0)
 	{
-		new_node->n = n;
-		new_node->prev = NULL;
-		new_node->next = *h;
-		*h = new_node;
+		new_node = add_dnodeint2(h, n);
 		return (new_node);
 	}
 	if (idx == len)
@@ -43,9 +38,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	/** assing to guide_ptr the first element of list */
 	guide_ptr = *h;
+	if (guide_ptr == NULL)
+	{
+		*h = new_node;
+		return (new_node);
+	}
+
 	while (guide_ptr != NULL)
 	{
-		if (idx_2 == (idx -1))
+		if (idx_2 == (idx - 1))
 		{
 			current_node = guide_ptr;
 			guide_ptr =  guide_ptr->next;
@@ -80,7 +81,7 @@ size_t dlistint_len(const dlistint_t *h)
 	return (num_nodes);
 }
 /**
- * add_dnodeint_end - Add node at the end
+ * add_dnodeint_end2 - Add node at the end
  * @head: pointer to head of the list
  * @n: n value to be assigned to new node
  * Return: address of new node on succes, Null on failure
@@ -113,4 +114,41 @@ dlistint_t *add_dnodeint_end2(dlistint_t **head, const int n)
 	new_node->next = NULL;
 	new_node->n = n;
 	return (new_node);
+}
+/**
+ * add_dnodeint2 - add node at the beginning of a list
+ * @head: pointer to first element of the list
+ * @n: n value to the new node
+ * Return: Adress of new node - On succes, NULL on failure
+ */
+dlistint_t *add_dnodeint2(dlistint_t **head, const int n)
+{
+	/** pointer to new node 🥎*/
+	dlistint_t *new;
+	/** creating space 🎱*/
+	new = malloc(sizeof(dlistint_t));
+	if (!new)
+		return (NULL);
+	if (!*head)
+	{
+		*head = new;
+		new->n = n;
+		new->next = NULL;
+		new->prev = NULL;
+	}
+	else
+	{
+		/** given data to new node 🥊 */
+		new->n = n;
+		/** new node points to node ahead 🦴*/
+		new->next = *head;
+		/** new node prev point to null 🍟*/
+		new->prev = NULL;
+		/** head prev points to new node 🆗 */
+		(*head)->prev = new;
+		/** head points to new node 🥤 */
+		*head = new;
+	}
+	/** return the address of new node 🍭*/
+	return (new);
 }
