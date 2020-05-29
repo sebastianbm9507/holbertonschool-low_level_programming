@@ -9,52 +9,44 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *temp;
-	unsigned long int index;
-	int succes;
-	int size = 0;
+	hash_node_t *temp = NULL, *new_node = NULL;
+	unsigned long int index = 0;
 
-	size = ht->size;
-	index = key_index((unsigned char *)key, size);
-
-	/* No collision case */
-	temp = ht->array[index];
-	if (ht->array[index] == NULL)
+	/* validate if the hash table exist */
+	if (ht)
 	{
-		ht->array[index] = malloc(sizeof(hash_node_t));
-		if (ht->array[index] == NULL)
+		/* asssign the index */
+		if (key != NULL && strlen(key) != NULL)
+			index = key_index((const unsigned char *)key, ht->size);
+		else
 			return (0);
-		ht->array[index]->key = strdup(key);
-		ht->array[index]->value = strdup(value);
-		ht->array[index]->next = NULL;
-		succes = 1;
-	}
-	else
-	{
-
-		while (temp->next != NULL)
+		/** assign the temp variable */
+		temp = ht->array[index];
+		while (temp)
 		{
-			if (strcmp(temp->next->key, key) == 0)
+			if (strcmp(temp->key, key) == 0)
 			{
-				free(temp->next->value);
-				temp->next->value = strdup(value);
-				succes = 1;
-				break;
+				/** free the value */
+				free(temp->value);
+				temp->value = strdup(value);
+				if (temp->value == NULL)
+					return (0);
+				return (1);
 			}
 			temp = temp->next;
 		}
-		/* case there's no coincidence */
-		if (temp == NULL)
-		{
-			/** create node to be inserted */
-			hash_node_t *new = malloc(sizeof(hash_node_t));
-
-			if (new == NULL)
+		/* case no colision */
+		new_node = malloc(sizeof(hash_node_t));
+		if (new_node == NULL)
 			return (0);
-			new->next = ht->array[index];
-			ht->array[index] = new;
-			succes = 1;
-		}
+		/* assign the values to new node */
+		new_node->key = strdup(key);
+		new_node->value = strdup(value);
+		if (new_node->key == NULL || new_node->value == NULL)
+			return (0);
+		new_node->next = ht->array[index];
+		ht->array[index] = new_node;
+		return (1);
 	}
-	return (succes);
+	return (0);
 }
