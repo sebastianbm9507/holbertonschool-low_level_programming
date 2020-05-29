@@ -31,11 +31,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		/** create node to be inserted */
-		hash_node_t *new = malloc(sizeof(hash_node_t));
 
-		if (new == NULL)
-			return (0);
 		while (temp->next != NULL)
 		{
 			if (strcmp(temp->next->key, key) == 0)
@@ -50,6 +46,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		/* case there's no coincidence */
 		if (temp == NULL)
 		{
+			/** create node to be inserted */
+			hash_node_t *new = malloc(sizeof(hash_node_t));
+
+			if (new == NULL)
+			return (0);
 			new->next = ht->array[index];
 			ht->array[index] = new;
 			succes = 1;
