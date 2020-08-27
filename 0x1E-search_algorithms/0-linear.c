@@ -29,7 +29,6 @@ int linear_search(int *array, size_t size, int value)
 			/* increment the index */
 			i++;
 		}
-		/* return ((flag == 1) ? i : (unsigned int)-1); */
 		if (flag == 1)
 			return (i);
 		return (-1);
