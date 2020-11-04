@@ -7,7 +7,7 @@ Set of programming exercises for academic and professional purposes to help solv
 You can see this repository as a way to remember programming concepts from practical exercises.
 
 Programming languages used:
-<h3 align="left">Programming languages used::</h3>
+<h3 align="left">Programming languages used:</h3>
 <p align="left"> <a href="https://www.cprogramming.com/" target="_blank"> <img src="https://devicons.github.io/devicon/devicon.git/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> </p>
 
 ## Prerequisites 📋
